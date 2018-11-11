@@ -43,6 +43,16 @@ public class Main {
         int count = dataSource.getCount(DataSource.TABLE_SONGS);
         System.out.println("Number of songs is " + count);
         dataSource.createViewForSongArtist();
+        songArtists = dataSource.querySongInfoView("Go Your Own Way");
+        if(songArtists.isEmpty()) {
+            System.out.println("Couldn't find the artist for the song");
+            return;
+        }
+        for(SongArtist artist : songArtists) {
+            System.out.println("FROM VIEW \n Artist name = " + artist.getArtistName() + "\n" +
+                    " Album name = " + artist.getAlbumName() + "\n" +
+                    " Track number = " + artist.getTrack());
+        }
         dataSource.close();
     }
 }
