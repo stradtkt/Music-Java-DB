@@ -2,7 +2,10 @@
   <dictionary name="strad">
     <words>
       <w>datasource</w>
+      <w>jdbc</w>
       <w>nocase</w>
+      <w>sqlite</w>
+      <w>strad</w>
     </words>
   </dictionary>
 </component>
